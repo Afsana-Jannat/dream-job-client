@@ -10,6 +10,10 @@ const Navbar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/alljobs">All Jobs</Link></li>
             <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/applied">Applied jobs</Link></li>
+            <li><Link to="/addjob">Add a job</Link></li>
+            
+
         </>
 
     return (
@@ -44,8 +48,7 @@ const Navbar = () => {
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm 
-dropdown-content mt-3 z-[1] p-2 shadow 
-bg-base-100 rounded-box w-52">
+dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
                                 <button className="btn btn-sm btn-ghost">
                                     {user?.displayName}

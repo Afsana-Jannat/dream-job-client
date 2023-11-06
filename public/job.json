@@ -1,0 +1,41 @@
+[
+    
+      {
+        "_id": "1",
+        "job_category": "On site Job",
+        "image": "https://i.ibb.co/10hjbH3/main-qimg-da13947baccd31a0de528a4964b5879d-lq.jpg",
+        "categoryImages": [
+          "https://i.ibb.co/9WKy307/image003-1.jpg",
+          "https://i.ibb.co/kh6wsD8/download.jpg"
+        ]
+      },
+      {
+        "_id": "2",
+        "job_category": "Remote Job",
+        "image": "https://i.ibb.co/tq8BWys/download-1.jpg",
+        "categoryImages": [
+          "https://i.ibb.co/cxKFWZP/high-paying-remote-jobs.jpg",
+          "https://i.ibb.co/7YMCLK3/remote-jobs-hiring.png"
+        ]
+      },
+      {
+        "_id": "3",
+        "job_category": "Hybrid",
+        "image": "https://i.ibb.co/RPrM5Fr/Microsoft-Teams-image-16.png",
+        "categoryImages": [
+          "https://i.ibb.co/74HxKfq/maxresdefault.jpg",
+          "https://i.ibb.co/nn1ssB3/Blog-cover-top7hybrid-1200x675.jpg"
+        ]
+      },
+      {
+        "_id": "4",
+        "job_category": "Part Time",
+        "image": "https://i.ibb.co/pWf70Mp/on-campus-part-time-jobs-in-UK.webp",
+        "categoryImages": [
+          "https://i.ibb.co/WzJ179R/part-time-freelance-jobs-649x389.jpg",
+          "https://i.ibb.co/16VsF4v/1135590-Summer-Part-Time-Jobs-072621-scaled.webp"
+        ]
+      }
+    
+]
+  
