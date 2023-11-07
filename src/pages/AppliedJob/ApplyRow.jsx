@@ -1,8 +1,9 @@
-import Swal from "sweetalert2";
 
 
-const ApplyRow = ({applyjob, handleDelete}) => {
-    const {_id, job_category, email, date, image} = applyjob
+const ApplyRow = ({applyjob, handleDelete, handleConfirm}) => {
+    const {_id, job_category, email, date, image} = applyjob;
+
+
   
 
     return (
@@ -26,6 +27,9 @@ const ApplyRow = ({applyjob, handleDelete}) => {
         <td>
             {date}
         </td>
+        <th>
+            <button onClick={() => handleConfirm(_id)} className="btn btn-ghost btn-xs">Confirm</button>
+        </th>
       </tr>
     );
 };

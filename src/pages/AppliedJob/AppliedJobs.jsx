@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ApplyRow from "./ApplyRow";
+import Swal from "sweetalert2";
 
 
 const AppliedJobs = () => {
@@ -12,10 +13,10 @@ const AppliedJobs = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setApplyjobs(data))
-    }, []);
+    }, [url]);
 
     const handleDelete = id => {
-        const proceed = confirm('Are you sure you want to delete');
+        const proceed = confirm('Are you sure you want to delete')
         if(proceed){
             fetch(`http://localhost:5000/applyjob/${id}`,{
                 method: 'DELETE'
@@ -24,13 +25,33 @@ const AppliedJobs = () => {
             .then(data => {
                 console.log(data);
                 if(data.deletedCount > 0){
-                    alert('deleted successfully');
+                    Swal.fire('deleted successfully');
                     const remaining = applyjobs.filter(applyjob =>
                         applyjob._id !== id);
                         setApplyjobs(remaining);
                 }
             })
         }
+    }
+
+    const handleConfirm = id =>{
+        fetch(`http://localhost:5000/applyjob/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+       
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0){
+                // update state
+                const remaining = applyjobs.filter(applyjob => applyjob._id !== id);
+                const update = applyjobs.find(applyjob => applyjob._id === id);
+            }
+        })
     }
     return (
         <div>
@@ -57,6 +78,7 @@ const AppliedJobs = () => {
                                 key={applyjob._id}
                                 applyjob={applyjob}
                                 handleDelete={handleDelete}
+                                handleConfirm={handleConfirm}
                             ></ApplyRow>)
                         }
                     </tbody>
