@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 
 const AllJobCard = ({alljob}) => {
+  const {user} = useAuth();
     const {_id, name, job_category, job_title, salary_range, job_posting_date, application_deadline, image} = alljob;
 
     return (
@@ -15,9 +17,9 @@ const AllJobCard = ({alljob}) => {
           <p>Posting data: {job_posting_date}</p>
           <p>Application deadline: {application_deadline}</p>
           <p>{salary_range}</p>
-          <Link to={`/details/${_id}`}>
+            <Link to={`/details/${_id}`}>
             <button className="btn btn-primary">Details</button>
-          </Link>
+          </Link> 
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 
@@ -17,7 +17,7 @@ const Details = () => {
     },[data.id])
 
     console.log(category);
-    const { image, job_category, name, job_title, application_deadline,
+    const {_id, image, job_category, name, job_title, application_deadline,
         job_posting_date, salary_range} = category;
     return (
         <div>
@@ -32,6 +32,9 @@ const Details = () => {
              <p className='text-2xl font-bold mt-6 mb-6 text-slate-600 ml-8'>Application date: {application_deadline}</p>
              <p className='text-2xl font-bold mt-6 mb-6 text-slate-600 ml-8'>Salary Range: {salary_range}</p>
              <br />
+             <Link to={`/applied/${_id}`}>
+                <button className="btn btn-block text-orange-900 font-semibold text-3xl mb-6 bg-orange-200">Apply Now</button>
+              </Link>
         </div>
     );
 };
