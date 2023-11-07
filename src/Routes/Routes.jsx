@@ -10,7 +10,8 @@ import Alljob from "../pages/AllJob/Alljob";
 import AppliedJobs from "../pages/AppliedJob/AppliedJobs";
 import PrivateRoute from "./PrivateRoute";
 import AddJob from "../pages/AddJob/AddJob";
-import JobcategoryDetails from "../Details/JobcategoryDetails";
+import CategoryDetails from "../CategoryDetails/CategoryDetails";
+import Details from "../CategoryDetails/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -56,9 +57,15 @@ const router = createBrowserRouter([
       
         },
         {
-          path: '/jobcategory',
-          element: <JobcategoryDetails></JobcategoryDetails>
+          path: '/categorydetails/:job_category',
+          element: <CategoryDetails></CategoryDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/jobcategory/${params.job_category}`)
+        },
+        {
+          path: 'details/:id',
+          element: <Details></Details>
         }
+        
       ]
     },
   ]);

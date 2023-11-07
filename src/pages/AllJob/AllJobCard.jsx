@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const AllJobCard = ({alljob}) => {
-    const {name, job_category, job_title, salary_range, job_posting_date, application_deadline, image} = alljob;
+    const {_id, name, job_category, job_title, salary_range, job_posting_date, application_deadline, image} = alljob;
 
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -14,9 +15,9 @@ const AllJobCard = ({alljob}) => {
           <p>Posting data: {job_posting_date}</p>
           <p>Application deadline: {application_deadline}</p>
           <p>{salary_range}</p>
-          <div className="card-actions">
+          <Link to={`/details/${_id}`}>
             <button className="btn btn-primary">Details</button>
-          </div>
+          </Link>
         </div>
       </div>
     );
