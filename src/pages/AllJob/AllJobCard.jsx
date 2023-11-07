@@ -10,11 +10,12 @@ const AllJobCard = ({alljob}) => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
-          <p>{job_category}</p>
           <p>{job_title}</p>
+          <p>Posting data: {job_posting_date}</p>
+          <p>Application deadline: {application_deadline}</p>
           <p>{salary_range}</p>
           <div className="card-actions">
-            <button className="btn btn-primary">View Details</button>
+            <button className="btn btn-primary">Details</button>
           </div>
         </div>
       </div>
