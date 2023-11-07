@@ -10,8 +10,12 @@ const Navbar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/alljobs">All Jobs</Link></li>
             <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/applied">Applied jobs</Link></li>
             <li><Link to="/addjob">Add a job</Link></li>
+            {
+                user?.email ? 
+                <li><Link to="/appliedjobs">Applied jobs</Link></li> : 
+                <li><Link to="/login">Login</Link></li>
+            }
             
 
         </>

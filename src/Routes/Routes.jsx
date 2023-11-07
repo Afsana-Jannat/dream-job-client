@@ -7,6 +7,8 @@ import Blogs from "../pages/Blogs/Blogs";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AppliedJob from "../pages/AppliedJob/AppliedJob";
 import Alljob from "../pages/AllJob/Alljob";
+import AppliedJobs from "../pages/AppliedJob/AppliedJobs";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,12 @@ const router = createBrowserRouter([
           path: 'applied/:id',
           element: <AppliedJob></AppliedJob>,
           loader: ({params}) => fetch(`http://localhost:5000/jobcategory/${params.id}`)
+        },
+        {
+          path: 'appliedjobs',
+          element: <PrivateRoute>
+            <AppliedJobs></AppliedJobs>
+          </PrivateRoute>
         }
       ]
     },
