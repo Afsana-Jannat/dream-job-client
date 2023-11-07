@@ -19,7 +19,7 @@ const AddJob = () => {
         console.log(newAddJob)
 
         // send data to the server
-        fetch('http://localhost:5000/allCategory', {
+        fetch('https://dream-job-server-seven.vercel.app/allCategory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,14 +35,14 @@ const AddJob = () => {
              })
     }
     return (
-        <div>
+        <div className="container md:px-20">
             <h2 className="text-3xl font-bold text-center mt-4 mb-4">Add A Job</h2>
             <form onSubmit={handleAddJob}>
                 {/* form row name job-cat*/}
                 <div className="md:flex mr-2 mb-5">
                     <div className="form-control ml-2 md:w-1/2">
                         <label className="label">
-                            <span className="label-text font-semibold text-xl">Name</span>
+                            <span className="label-text font-semibold text-xl">Company Name</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="name" placeholder="name" 

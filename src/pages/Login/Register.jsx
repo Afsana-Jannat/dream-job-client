@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 
 
 const Register = () => {
-    const { createUser } = useAuth();
+    const { createUserAndUpdate } = useAuth();
+    const navigate = useNavigate()
 
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -30,10 +31,10 @@ const Register = () => {
             return Swal.fire("password need at least 1 symbol");
           }
 
-          createUser(email, password)
+          createUserAndUpdate(email, password,name,image)
           .then(() =>{
               Swal.fire("Register in successs")
-  
+  navigate('/')
           })
   
           .catch(error =>{
@@ -41,10 +42,6 @@ const Register = () => {
           })
 
 
-           // creating a new user
-        createUser(email, password)
-        .then(res => console.log(res.user))
-        .catch(error=>console.error(error))
 
     }
 

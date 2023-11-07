@@ -14,7 +14,8 @@ const Navbar = () => {
             {
                 user?.email ? 
                 <><li><Link to="/appliedjobs">Applied jobs</Link></li>
-                <li><Link to="/addjob">Add a job</Link></li></> : 
+                <li><Link to="/addjob">Add a job</Link></li>
+                <li><Link to="/myjobs">My Jobs</Link></li></> : 
                 <li><Link to="/login">Login</Link></li>
             }
             
@@ -32,9 +33,9 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">
+                <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img className="w-24 h-19" src="https://i.ibb.co/4YyknPc/dream-jobs-logo.png" alt="" />
-                </a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

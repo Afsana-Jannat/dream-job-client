@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import ApplyRow from "./ApplyRow";
 import Swal from "sweetalert2";
 
 
-const AppliedJobs = () => {
+const MyJobs = () => {
     const { user } = useContext(AuthContext);
     const [applyjobs, setApplyjobs] = useState([]);
 
-    const url = `https://dream-job-server-seven.vercel.app/applyjob?email=${user?.email}`
+    const url = `https://dream-job-server-seven.vercel.app/myjob?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -34,31 +33,10 @@ const AppliedJobs = () => {
         }
     }
 
-    const handleConfirm = id =>{
-        fetch(`https://dream-job-server-seven.vercel.app/applyjob/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'confirm' })
-        })
-       
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.modifiedCount > 0){
-                // update state
-                const remaining = applyjobs.filter(applyjob => applyjob._id !== id);
-                const updated = applyjobs.find(applyjob => applyjob._id === id);
-                updated.status = 'confirm'
-                const newApply = [updated, ...remaining];
-                setApplyjobs(newApply);
-            }
-        })
-    }
+   
     return (
-        <div className="container md:px-20">
-            <h2 className="text-center mt-4 mb-8 text-blue-800 text-3xl font-bold">Total applied job: {applyjobs.length}</h2>
+        <div>
+            <h2 className="text-center mt-4 mb-8 text-blue-800 text-3xl font-bold">My applied jobs: {applyjobs.length}</h2>
             <div className="overflow-x-auto font-bold text-blue-700">
                 <table className="table">
                     {/* head */}
@@ -80,12 +58,35 @@ const AppliedJobs = () => {
                     </thead>
                     <tbody>
                         {
-                            applyjobs.map(applyjob => <ApplyRow
-                                key={applyjob._id}
-                                applyjob={applyjob}
-                                handleDelete={handleDelete}
-                                handleConfirm={handleConfirm}
-                            ></ApplyRow>)
+                            applyjobs.map(applyjob => <tr key={applyjob._id}>
+                                <th>
+                                <button onClick={() => handleDelete(applyjob._id)} className="btn btn-sm btn-circle">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                                </th>
+                                <td>
+                                    <div className="avatar">
+                                      <div className="rounded w-24 h-24">
+                                        {applyjob.image && <img src={applyjob.image} alt="Avatar Tailwind CSS Component" />}
+                                      </div>
+                                    </div>
+                                </td>
+                                <td>
+                                  {applyjob.job_title}
+                                </td>
+                                <td>
+                                  {applyjob.job_category}
+                                </td>
+                                <td>{applyjob.email}</td>
+                                <td>
+                                    {applyjob.date}
+                                </td>
+                                <th>
+                                    {
+                                       applyjob.status?applyjob.status :' pending '
+                                    }
+                                </th>
+                              </tr>)
                         }
                     </tbody>
 
@@ -96,4 +97,5 @@ const AppliedJobs = () => {
     )
 };
 
-export default AppliedJobs;
+
+export default MyJobs;

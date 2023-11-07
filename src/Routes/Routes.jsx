@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddJob from "../pages/AddJob/AddJob";
 import CategoryDetails from "../CategoryDetails/CategoryDetails";
 import Details from "../CategoryDetails/Details/Details";
+import MyJobs from "../pages/MyJobs/MyJobs";
 
 const router = createBrowserRouter([
     {
@@ -38,12 +39,12 @@ const router = createBrowserRouter([
         {
           path: 'alljobs',
           element: <Alljob></Alljob>,
-          loader: () => fetch('http://localhost:5000/allCategory')
+          loader: () => fetch('https://dream-job-server-seven.vercel.app/allCategory')
         },
         {
           path: 'applied/:id',
           element: <AppliedJob></AppliedJob>,
-          loader: ({params}) => fetch(`http://localhost:5000/jobcategory/${params.id}`)
+          loader: ({params}) => fetch(`https://dream-job-server-seven.vercel.app/details/${params.id}`)
         },
         {
           path: 'appliedjobs',
@@ -57,9 +58,14 @@ const router = createBrowserRouter([
       
         },
         {
+          path: '/myjobs',
+          element: <MyJobs></MyJobs>
+      
+        },
+        {
           path: '/categorydetails/:job_category',
           element: <CategoryDetails></CategoryDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/jobcategory/${params.job_category}`)
+          loader: ({params}) => fetch(`https://dream-job-server-seven.vercel.app/jobcategory/${params.job_category}`)
         },
         {
           path: 'details/:id',

@@ -7,7 +7,7 @@ const Carousel = () => {
                 Find Dream Job
             </h2>
             <div className="grid ml-6 md:grid-cols-2">
-                <div className="h-80 w-96 carousel carousel-vertical rounded-box">
+                <div className="h-80 w-92 carousel carousel-vertical rounded-box">
                     <div className="carousel-item h-full">
                         <img src="https://i.ibb.co/wRWv89c/adults-apron-business-580613.jpg" alt="Burger" />
                     </div>

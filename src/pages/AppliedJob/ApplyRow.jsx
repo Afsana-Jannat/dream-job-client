@@ -1,7 +1,7 @@
 
 
 const ApplyRow = ({applyjob, handleDelete, handleConfirm}) => {
-    const {_id, job_category, email, date, image, status} = applyjob;
+    const {_id, job_category,job_title, email, date, image, status} = applyjob;
 
 
   
@@ -19,6 +19,9 @@ const ApplyRow = ({applyjob, handleDelete, handleConfirm}) => {
                 {image && <img src={image} alt="Avatar Tailwind CSS Component" />}
               </div>
             </div>
+        </td>
+        <td>
+          {job_title}
         </td>
         <td>
           {job_category}

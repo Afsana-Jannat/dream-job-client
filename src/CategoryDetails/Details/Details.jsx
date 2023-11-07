@@ -11,7 +11,7 @@ const Details = () => {
     const [category, setcategory] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/details/${data.id}`)
+        fetch(`https://dream-job-server-seven.vercel.app/details/${data.id}`)
         .then(res=>res.json())
         .then(data=>setcategory(data))
     },[data.id])

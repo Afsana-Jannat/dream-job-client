@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AppliedJob = () => {
     const category = useLoaderData();
-    const { job_category, image } = category;
+    const { job_category, image,job_title,_id } = category;
     const {user} = useContext(AuthContext)
 
     const handleAppliedJob = event =>{
@@ -19,11 +20,13 @@ const AppliedJob = () => {
             email,
             image,
             date,
-            job_category
+            job_category,
+            jobId:_id,
+            job_title
         }
           console.log(apply);
 
-          fetch('http://localhost:5000/applyjob', {
+          fetch('https://dream-job-server-seven.vercel.app/applyjob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,8 +36,11 @@ const AppliedJob = () => {
           .then(res => res.json())
           .then(data => {
             console.log(data);
-            if(data.inserteId){
-                alert('service book successfully')
+            if(data.insertedId){
+                Swal.fire('service book successfully')
+            }
+            else{
+              Swal.fire(data.message)
             }
           })
 
@@ -50,19 +56,19 @@ const AppliedJob = () => {
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" defaultValue={user?.displayName} name="name" placeholder="name" className="input input-bordered" required />
+          <input type="text" defaultValue={user?.displayName} name="name" placeholder="name" className="input input-bordered" required readOnly />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Date</span>
           </label>
-          <input type="date" name="date" className="input input-bordered" required />
+          <input type="date" name="date" defaultValue={new Date()} className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" required />
+          <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" required readOnly />
         </div>
         <div className="form-control">
           <label className="label">

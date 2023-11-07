@@ -13,14 +13,14 @@ const JobBycategory = () => {
     const [selectCategory,setSelectCategory]=useState('all')
 
     useEffect(() => {
-        fetch('http://localhost:5000/jobcategories')
+        fetch('https://dream-job-server-seven.vercel.app/jobcategories')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, []);
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/job-by-category/${selectCategory}`)
+        fetch(`https://dream-job-server-seven.vercel.app/job-by-category/${selectCategory}`)
             .then(res => res.json())
             .then(data => setSingleCategory(data))
     },[selectCategory])
