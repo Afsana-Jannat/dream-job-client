@@ -3,10 +3,10 @@
 const Carousel = () => {
     return (
         <div>
-            <h2 className="text-3xl mt-8 mb-8 text-blue-900 font-bold text-center">
+            <h2 className="text-4xl mt-8 mb-8 text-blue-900 font-bold text-center">
                 Find Dream Job
             </h2>
-            <div className="grid md:grid-cols-2">
+            <div className="grid ml-6 md:grid-cols-2">
                 <div className="h-80 w-96 carousel carousel-vertical rounded-box">
                     <div className="carousel-item h-full">
                         <img src="https://i.ibb.co/wRWv89c/adults-apron-business-580613.jpg" alt="Burger" />
@@ -34,7 +34,7 @@ const Carousel = () => {
                     <h2 className="text-2xl font-semibold mb-2 text-gray-600">
                         The services that you will get:
                     </h2>
-                    <p className="text-yellow-700">
+                    <p className="text-blue-500 font-bold">
                         - 100% Responsive For all Devices Like ( Desktop, Laptop, Mobile)
 
                         - Best & Recommended Plugins.
@@ -64,7 +64,7 @@ const Carousel = () => {
 
 
             <div>
-                <h2 className="text-center text-3xl mt-6 mb-8 font-bold"><span className="text-blue-500">Reviews</span> from those
+                <h2 className="text-center text-4xl mt-6 mb-8 font-bold"><span className="text-blue-500">Reviews</span> from those
                     <br />who got jobs
                 </h2>
 

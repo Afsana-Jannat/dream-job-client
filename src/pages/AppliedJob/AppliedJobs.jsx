@@ -49,27 +49,32 @@ const AppliedJobs = () => {
             if(data.modifiedCount > 0){
                 // update state
                 const remaining = applyjobs.filter(applyjob => applyjob._id !== id);
-                const update = applyjobs.find(applyjob => applyjob._id === id);
+                const updated = applyjobs.find(applyjob => applyjob._id === id);
+                updated.status = 'confirm'
+                const newApply = [updated, ...remaining];
+                setApplyjobs(newApply);
             }
         })
     }
     return (
         <div>
-            <h2>total applied job: {applyjobs.length}</h2>
-            <div className="overflow-x-auto">
+            <h2 className="text-center mt-4 mb-8 text-blue-800 text-3xl font-bold">Total applied job: {applyjobs.length}</h2>
+            <div className="overflow-x-auto font-bold text-blue-700">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    <input type="checkbox" 
+                                    className="checkbox" />
                                 </label>
                             </th>
                             <th>Image</th>
                             <th>Job-Category</th>
                             <th>Email</th>
-                            <th>date</th>
+                            <th>Date</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>

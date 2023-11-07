@@ -1,7 +1,7 @@
 
 
 const ApplyRow = ({applyjob, handleDelete, handleConfirm}) => {
-    const {_id, job_category, email, date, image} = applyjob;
+    const {_id, job_category, email, date, image, status} = applyjob;
 
 
   
@@ -28,7 +28,11 @@ const ApplyRow = ({applyjob, handleDelete, handleConfirm}) => {
             {date}
         </td>
         <th>
-            <button onClick={() => handleConfirm(_id)} className="btn btn-ghost btn-xs">Confirm</button>
+            {
+                status === 'confirm' ? <span className="font-bold text-orange-700">confirmed</span> :
+                <button onClick={() => handleConfirm(_id)} 
+                className="btn btn-ghost btn-xs text-orange-400">Please Confirm</button>
+            }
         </th>
       </tr>
     );

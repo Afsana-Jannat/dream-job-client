@@ -5,7 +5,8 @@ import Navbar from '../Navbar/Navbar';
 
 const Main = () => {
     return (
-        <div>
+        <div style={{backgroundImage: 'url(https://i.ibb.co/Jz6WR15/white-silver-christmas-wedding-anniversary-snow-fall-background-or-birthday-diamond-jewelry-bling-gl.webp)'}}>
+
             <Navbar></Navbar>
             
             <Outlet></Outlet>
