@@ -34,7 +34,7 @@ console.log(selectCategory);
     return (
         <div>
             <div>
-                <h3 className="text-5xl text-center mt-4
+                <h3 className="text-5xl text-slate-700 text-center mt-4
                 font-semibold">Job By
                     <span className="text-blue-400"> Category</span></h3>
             </div>

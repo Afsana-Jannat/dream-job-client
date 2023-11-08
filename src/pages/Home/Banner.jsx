@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="bg-opacity-60"></div>
         <div className="text-left">
           <div className="max-w-md">
-            <h1 className="text-2xl md:text-5xl  font-semibold">
+            <h1 className="text-2xl md:text-5xl text-slate-600  font-semibold">
               Get your dream job fast and build your career
             </h1>
           </div>

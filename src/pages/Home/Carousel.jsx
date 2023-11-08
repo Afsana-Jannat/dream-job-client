@@ -2,7 +2,7 @@
 
 const Carousel = () => {
     return (
-        <div>
+        <>
             <h2 className="text-4xl mt-8 mb-8 text-blue-900 font-bold text-center">
                 Find Dream Job
             </h2>
@@ -62,60 +62,31 @@ const Carousel = () => {
                 </div>
             </div>
 
-
-            <div>
-                <h2 className="text-center text-4xl mt-6 mb-8 font-bold"><span className="text-blue-500">Reviews</span> from those
-                    <br />who got jobs
-                </h2>
-
-                <div>
-                    <div className="carousel w-full h-[600px]">
-                        <div id="slide1" className="carousel-item relative w-full">
-                            <img src="https://i.ibb.co/GFzkW2F/istockphoto-1287566098-612x612-1.jpg" className="w-full rounded-xl" />
-                            <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-                                <div className='text-white space-y-7 pl-12 w-1/2'>
-                                    <h2 className='text-3xl text-center font-bold'>Affordable Price For Car Servicing</h2>
-                                    <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
-                                    
-                                </div>
-                            </div>
-                            <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                                <a href="#slide3" className="btn btn-circle mr-5">❮</a>
-                                <a href="#slide2" className="btn btn-circle">❯</a>
-                            </div>
-                        </div>
-                        <div id="slide2" className="carousel-item relative w-full">
-                            <img src="https://i.ibb.co/s1VHRmF/istockphoto-1201620249-612x612.jpg" className="w-full rounded-xl" />
-                            <div className="absolute rounded-xl flex justify-center items-center h-full bg-gradient-to-r from-[#151515]
-                             to-[rgba(21, 21, 21, 0)]">
-                                <div className='text-white text-center space-y-7 pl-12 w-1/2'>
-                                    <h2 className='text-3xl font-bold'>Affordable Price For Car Servicing</h2>
-                                    <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
-                                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                                <a href="#slide1" className="btn btn-circle mr-5">❮</a>
-                                <a href="#slide3" className="btn btn-circle">❯</a>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="slide3" className="carousel-item relative w-full">
-                            <img src="https://i.ibb.co/5cCtBSR/woman-desk-giving-thumbs-up-while-holding-tablet-23-2148434684.jpg" className="w-full rounded-xl" />
-                            <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-                                <div className='text-white space-y-7 pl-12 w-1/2'>
-                                    <h2 className='text-6xl font-bold'>Affordable Price For Car Servicing</h2>
-                                    <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
-                                    
-                                </div>
-                            </div>
-                            <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                                <a href="#slide2" className="btn btn-circle mr-5">❮</a>
-                                <a href="#slide1" className="btn btn-circle">❯</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {/* time */}
+            <h2 className="mt-8 text-center text-blue-900 text-4xl 
+            font-bold">Our website visite & <br /> <span className="text-orange-600">Register</span> </h2>
+            <div className="stats bg-slate-600 text-white lg:p-10 lg:w-1/2 md:ml-56 mt-10 stats-vertical md:stats-horizontal shadow">
+  
+  <div className="stat">
+    <div className="stat-title">Visite</div>
+    <div className="stat-value">31K</div>
+    <div className="stat-desc">Jan 1st - Feb 1st</div>
+  </div>
+  
+  <div className="stat">
+    <div className="stat-title">New Users</div>
+    <div className="stat-value">4,200</div>
+    <div className="stat-desc">↗︎ 400 (22%)</div>
+  </div>
+  
+  <div className="stat">
+    <div className="stat-title">New Registers</div>
+    <div className="stat-value">1,200</div>
+    <div className="stat-desc">↘︎ 90 (14%)</div>
+  </div>
+  
+</div>
+            </>
     );
 };
 
