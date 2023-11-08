@@ -30,6 +30,34 @@ const Blogs = () => {
                 <br />
 
             </p>
+
+            <h2 className="text-3xl text-blue-400 mt-4
+            mb-2"
+            > What is express js? What is Nest JS (google it)?</h2>
+            <p className="mb-6 ml-4 text-xl font-semibold text-blue-800">
+            ExpressJS vs. NestJS. The biggest difference between these frameworks is that NestJS is opinionated, and ExpressJS is not. It means Express gives developers the freedom to make multiple possibilities and implement code as per the need, as it does not have a set of pre-defined rules to follow.
+            </p>
+
+            <h2 className="text-3xl text-blue-400 mt-4
+            mb-2">
+                Explain your code - 
+            </h2>
+            <p className="mb-6 ml-4 text-xl font-semibold text-blue-800">
+Login Page: When a user clicks on the login button, they will be redirected to the login
+page having the following:
+- Email/Password
+- Google Sign-in
+- A link that will redirect to the registration page
+User Registration and Profiles:
+User registration and login functionality.
+  Update Action - If they click the `update` button, they can update the Job information
+  Delete Action - If they click the delete button, the Job will be removed from the list.
+Before the delete, ask for a delete confirmation.
+  Add A Job page will be a private route(only logged in users can add jobs)
+  All Jobs page: Create an All Jobs page where you will see the jobs all the users have
+added in the tabular form. 
+ Job by category - Implement a tab system for Job by Category section.  
+            </p>
         </div>
     );
 };
