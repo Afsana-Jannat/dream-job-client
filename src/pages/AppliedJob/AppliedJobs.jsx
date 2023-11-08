@@ -60,7 +60,7 @@ const AppliedJobs = () => {
         <div className="container md:px-20">
             <h2 className="text-center mt-4 mb-8 text-blue-800 text-3xl font-bold">Total applied job: {applyjobs.length}</h2>
             <div className="overflow-x-auto font-bold text-blue-700">
-                <table className="table">
+                <table className="table text-orange-900">
                     {/* head */}
                     <thead>
                         <tr>
